@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+		<script src="http://zeptojs.com/zepto.min.js"></script>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			function draw(container, data, scale){
+				color = d3.scale.category10();
+				container.selectAll("polygon")
+    					.data(data.list[0].zones)
+    					.enter()
+    					.append("polygon")
+    					.attr("points",function(d) { 
+					        return d.shape.points.map(function(d) {
+					        	return [scale(d.x),scale(d.y)].join(",");
+					        }).join(" ");
+					    })
+					    .attr("stroke", function (d) {
+						    return color(d.name)
+						})
+						.attr("fill", function (d) {
+						    return color(d.name)
+						})
+    					.attr("stroke-width",2);
+			}
+
+			var svgContainer = d3.select("body").append("svg").attr("width", $("body").width()).attr("height", $("body").height());
+			var linearScale = d3.scale.linear().domain([0,10000]).range([0, $("body").height() * 5]);
+			$.getJSON('space.json', function(data){
+				draw(svgContainer, data, linearScale);
+			});
+		});
+	</script>
