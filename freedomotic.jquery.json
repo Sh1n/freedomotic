@@ -1,0 +1,27 @@
+{
+  "name": "freedomotic",
+  "title": "Freedomotic",
+  "description": "jQuery plugin for the Node.js application of freedomotic framework",
+  "version": "0.1.0",
+  "homepage": "https://github.com/Sh1n/freedomotic",
+  "author": {
+    "name": "shin",
+    "email": "bux.francesco@yahoo.it",
+    "url": "http://about.me/fbux"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sh1n/freedomotic.git"
+  },
+  "bugs": "https://github.com/Sh1n/freedomotic/issues",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/Sh1n/freedomotic/blob/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": "*"
+  },
+  "keywords": []
+}
